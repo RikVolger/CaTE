@@ -40,6 +40,10 @@ class Parameter(ABC):
         bounds = [lower, upper]
         return bounds
 
+    @bounds.setter
+    def bounds(self, bounds):
+        self._bounds = bounds
+
     def __len__(self):
         if np.isscalar(self._value):
             return 1
