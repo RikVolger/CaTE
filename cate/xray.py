@@ -475,7 +475,7 @@ def xray_multigeom_project(geoms, markers: dict) -> list:
     """
 
     data = []
-    for g in geoms.values():
+    for g in geoms:
         projs = {}
         for id, marker in markers.items():
             v = marker.value if isinstance(marker, VectorParameter) else marker
@@ -520,8 +520,8 @@ class XrayOptimizationProblem:
             raise ValueError(f'`mode` must be "jointly" or "alternate".')
 
         if mode == 'alternate' and markers is not None:
-           raise ValueError('Set the `markers` argument to `None` when'
-                            '`mode` is "alternate"')
+            raise ValueError('Set the `markers` argument to `None` when'
+                             '`mode` is "alternate"')
 
         self.markers = markers
         self.geoms = geoms
