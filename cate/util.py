@@ -175,7 +175,7 @@ def plot_projected_markers(*projected_markers, det=None, det_padding=1.2):
         plt.scatter(ys, zs, marker=symbol)
 
         for i, (k, p) in enumerate(set.items()):
-            ax.annotate(i, (ys[i] + set_i * 10, zs[i]))
+            ax.annotate(i, (ys[i] + set_i * 2, zs[i]))
 
     if det is not None:
         rect = Rectangle((-det.width / 2, -det.height / 2),
